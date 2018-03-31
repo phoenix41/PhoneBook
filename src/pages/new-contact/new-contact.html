@@ -1,0 +1,42 @@
+<ion-header>
+
+  <ion-navbar color="light">
+    <ion-title text-center>NEW CONTACT</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bg">
+<div class="master">
+	<form (ngSubmit)="newcontact(f.value)" #f="ngForm"> 
+
+		<ion-list>
+		 <ion-item>
+		 	<ion-label>NAME</ion-label>
+		 	<ion-input type="text"name="name" ngModel required></ion-input>
+		 </ion-item>
+		 <ion-item>
+		 	<ion-label>ADDRESS</ion-label>
+		 	<ion-input type="text"name="addr" ngModel required></ion-input>
+		 </ion-item>
+		 <ion-item>
+		 	<ion-label>CONTACT</ion-label>
+		 	<ion-input type="text"name="contact" ngModel required></ion-input>
+		 </ion-item>
+		<p radio-group [(ngModel)]="op" name="op" required>
+			<ion-item>
+			    <ion-label>FAMILY</ion-label>
+			    <ion-radio value="family"></ion-radio>
+			</ion-item>	 
+			<ion-item>
+			    <ion-label>FRIENDS</ion-label>
+			    <ion-radio value="friends"></ion-radio>
+			</ion-item>	
+			</p>   
+		 </ion-list>
+		 
+		<button ion-button color="light" block type="submit" [disabled]="!f.valid">ADD</button>
+	</form>
+	</div>
+</ion-content>
